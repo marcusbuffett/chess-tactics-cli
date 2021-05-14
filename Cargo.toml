@@ -1,0 +1,28 @@
+[package]
+name = "tactics-trainer-cli"
+version = "1.0.0"
+edition = "2018"
+
+description = "Train chess tactics in your terminal"
+homepage = "https://github.com/marcusbuffett/chess-tactics-cli"
+repository = "https://github.com/marcusbuffett/chess-tactics-cli"
+keywords = ["cli", "chess"]
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.40"
+colored = "2.0.0"
+reqwest = {version = "0.11.3", features = ["json"] }
+rprompt = "1.0.5"
+serde = { version = "1.0.125", features = ["derive"] }
+serde_json = "1.0.64"
+tokio = { version = "1.5.0", features = ["full"] }
+shakmaty = "0.19.0"
+clap = "3.0.0-beta.2"
+prettytable-rs = "0.8.0"
+
+[[bin]]
+name = "tactics-trainer"
+path = "src/main.rs"
