@@ -104,7 +104,10 @@ async fn main() -> Result<()> {
                 continue;
             }
             PromptResponse::NoResponse => {}
-            PromptResponse::HintPiece => {}
+            PromptResponse::ShowRating => {
+                println!("This tactic is rated {}.", tactic.rating);
+                continue;
+            }
             PromptResponse::Move(move_input) => {
                 if move_input == san_move.to_string() {
                     correct = true;
@@ -159,7 +162,7 @@ enum PromptResponse {
     NoResponse,
     PrintFen,
     Help,
-    HintPiece,
+    ShowRating,
     Move(String),
 }
 
@@ -169,6 +172,7 @@ fn get_prompt_response(position: &Chess) -> PromptResponse {
         "s" | "show" => return PromptResponse::ShowBoard,
         "f" | "fen" => return PromptResponse::PrintFen,
         "?" | "help" => return PromptResponse::Help,
+        "r" | "rating" => return PromptResponse::ShowRating,
         // "h" | "hint" => return PromptResponse::NoResponse,
         "" => return PromptResponse::NoResponse,
         x => return PromptResponse::Move(x.to_string()),
@@ -237,7 +241,7 @@ fn print_help() {
     ptable!(
         [
             "Any move, ex. Qxd7",
-            "Attempt to solve the tactic with the given move"
+            "Attempt to solve the tactic with the given move."
         ],
         [
             "No input",
@@ -245,10 +249,11 @@ fn print_help() {
         ],
         [
             "'f' or 'fen'",
-            "Print out the current board, in FEN notation"
+            "Print out the current board, in FEN notation."
         ],
         ["'s' or 'show'", "Show the current board."],
-        ["'?' or 'help'", "Display this help"]
+        ["'r' or 'rating'", "Show the rating of the current tactic."],
+        ["'?' or 'help'", "Display this help."]
     );
 }
 
