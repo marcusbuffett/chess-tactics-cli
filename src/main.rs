@@ -216,7 +216,7 @@ async fn get_new_puzzle(request: ChessTacticRequest) -> Result<ChessTactic> {
 fn get_api_endpoint() -> String {
     return format!(
         "{}/api/v1/tactic",
-        env::var("TACTICS_SERVER_URL").unwrap_or("https://tactics.exoapi.app".to_string())
+        env::var("TACTICS_SERVER_URL").unwrap_or("https://chessmadra.com".to_string())
     );
 }
 
