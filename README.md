@@ -12,7 +12,7 @@
 ![Screen shot](./assets/usage.gif)
 
 Practice some chess tactics in your terminal while you wait for your code to
-compile. Fetches tactics from [this tactics API](https://tactics.exoapi.app).
+compile. Fetches tactics from [Chess Madra](https://chessmadra.com).
 
 
 ### Built With
@@ -20,7 +20,6 @@ compile. Fetches tactics from [this tactics API](https://tactics.exoapi.app).
 * Rust
 * [The Lichess Puzzles Database](https://database.lichess.org/#puzzles)
 * [Shakmaty](https://github.com/niklasf/shakmaty)
-* [Chess Tactics API](https://tactics.exoapi.app/)
 
 ## Installation
 

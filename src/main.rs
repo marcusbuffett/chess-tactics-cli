@@ -5,7 +5,7 @@ extern crate anyhow;
 extern crate prettytable;
 
 use anyhow::Context;
-use clap::{AppSettings, Clap};
+use clap::{AppSettings, Parser};
 use colored::*;
 use serde::{Deserialize, Serialize};
 use shakmaty::{
@@ -17,7 +17,7 @@ use shakmaty::{
 
 use anyhow::Result;
 
-#[derive(Clap, Debug)]
+#[derive(Parser, Debug)]
 #[clap(version = "1.0", author = "Marcus B. <me@mbuffett.com>")]
 #[clap(setting = AppSettings::ColoredHelp)]
 struct Args {

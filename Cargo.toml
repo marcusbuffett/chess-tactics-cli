@@ -1,6 +1,6 @@
 [package]
 name = "tactics-trainer-cli"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2018"
 
 description = "Train chess tactics in your terminal"
@@ -20,7 +20,7 @@ serde = { version = "1.0.125", features = ["derive"] }
 serde_json = "1.0.64"
 tokio = { version = "1.5.0", features = ["full"] }
 shakmaty = "0.19.0"
-clap = "3.0.0-beta.2"
+clap = {version = "3.0.1", features = ["derive"]}
 prettytable-rs = "0.8.0"
 
 [[bin]]
